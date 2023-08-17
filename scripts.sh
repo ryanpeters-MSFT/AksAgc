@@ -17,7 +17,7 @@ az identity federated-credential create -n azure-alb-identity --identity-name ry
 az identity federated-credential list -g rg-aks-cni --identity ryanagc -o table
 
 # install the ALB controllers onto the cluster (--version is required as of writing)
-helm install alb-controller oci://mcr.microsoft.com/application-lb/charts/alb-controller --version 0.4.023971 --set albController.podIdentity.clientID=$(az identity show -g $RESOURCE_GROUP -n azure-alb-identity --query clientId -o tsv)
+helm install alb-controller oci://mcr.microsoft.com/application-lb/charts/alb-controller --version 0.4.023971 --set albController.podIdentity.clientID=$(az identity show -g rg-aks-cni -n ryanagc --query clientId -o tsv)
 
 # verify they're running
 kubectl get pods -n azure-alb-system
