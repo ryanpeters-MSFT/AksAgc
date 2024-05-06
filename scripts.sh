@@ -1,3 +1,6 @@
+### NOTE ###
+# These scripts reference an older version of ALB and should not be used
+
 # LINKS
 - https://learn.microsoft.com/en-us/azure/application-gateway/for-containers/quickstart-deploy-application-gateway-for-containers-alb-controller
 - https://learn.microsoft.com/en-us/azure/application-gateway/for-containers/quickstart-create-application-gateway-for-containers-managed-by-alb-controller?tabs=new-subnet-aks-vnet
