@@ -4,7 +4,7 @@ metadata:
   name: gateway
   annotations:
     alb.networking.azure.io/alb-name: alb-test
-    alb.networking.azure.io/alb-namespace: alb-resources
+    alb.networking.azure.io/alb-namespace: alb
 spec:
   gatewayClassName: azure-alb-external
   listeners:
