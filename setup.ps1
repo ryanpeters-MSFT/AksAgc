@@ -1,4 +1,5 @@
-$GROUP = "rg-aks-agc"
+. .\vars.ps1
+
 $VNET = "vnet"
 $AKS_SUBNET = "aks"
 $ALB_SUBNET = "alb"
@@ -86,7 +87,8 @@ helm install alb-controller oci://mcr.microsoft.com/application-lb/charts/alb-co
     --create-namespace `
     --version 1.4.12 `
     --set albController.namespace="alb" `
-    --set albController.podIdentity.clientID=$(az identity show -g $GROUP -n $IDENTITY_NAME --query clientId -o tsv)
+    --set albController.podIdentity.clientID=$(az identity show -g $GROUP -n $IDENTITY_NAME --query clientId -o tsv) `
+    --set albController.securityPolicyFeatureFlag=true
 
 # output the subnet ID for the App Gateway
 "Update spec.associations in ApplicationLoadBalancer manifest: $ALB_SUBNET_ID"

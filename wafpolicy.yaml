@@ -1,0 +1,14 @@
+apiVersion: alb.networking.azure.io/v1
+kind: WebApplicationFirewallPolicy
+metadata:
+  name: waf-policy
+  namespace: alb
+spec:
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: HTTPRoute
+    name: nginx-route
+    namespace: alb
+    #sectionNames: ["listenerA"] # defined if targeting a specific listener on a gateway resource
+  webApplicationFirewall:
+    id: /subscriptions/24ef1668-95f3-4c77-adf2-2d023271a3e1/resourceGroups/rg-aks-agc/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/wafpolicy
