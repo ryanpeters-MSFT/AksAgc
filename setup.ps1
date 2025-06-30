@@ -85,7 +85,7 @@ az aks get-credentials --resource-group $GROUP --name $CLUSTER_NAME --overwrite-
 helm install alb-controller oci://mcr.microsoft.com/application-lb/charts/alb-controller `
     --namespace "alb" `
     --create-namespace `
-    --version 1.4.12 `
+    --version 1.5.2 `
     --set albController.namespace="alb" `
     --set albController.podIdentity.clientID=$(az identity show -g $GROUP -n $IDENTITY_NAME --query clientId -o tsv) `
     --set albController.securityPolicyFeatureFlag=true
