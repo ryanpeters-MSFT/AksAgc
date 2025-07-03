@@ -47,7 +47,7 @@ curl.exe http://$hostname
 
 ### Deploy using Gateway API
 
-To deploy using Ingress, apply the Ingress manifest to expose a route to the Nginx pods.
+To deploy using Gateway API and HttpRoute, apply their manifests to expose a gateway and default route to the Nginx pods.
 
 ```powershell
 # create the gateway and httproute resources
