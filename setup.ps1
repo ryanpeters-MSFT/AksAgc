@@ -35,6 +35,7 @@ Start-Sleep -Seconds 10
 az aks create -n $CLUSTER_NAME -g $GROUP `
     --vnet-subnet-id $AKS_SUBNET_ID `
     --network-plugin azure `
+    --node-vm-size Standard_D8s_v6 `
     --enable-oidc-issuer `
     --enable-workload-identity `
     --service-cidr 10.1.0.0/24 `
@@ -85,7 +86,7 @@ az aks get-credentials --resource-group $GROUP --name $CLUSTER_NAME --overwrite-
 helm install alb-controller oci://mcr.microsoft.com/application-lb/charts/alb-controller `
     --namespace "alb" `
     --create-namespace `
-    --version 1.5.2 `
+    --version 1.6.7 `
     --set albController.namespace="alb" `
     --set albController.podIdentity.clientID=$(az identity show -g $GROUP -n $IDENTITY_NAME --query clientId -o tsv) `
     --set albController.securityPolicyFeatureFlag=true

@@ -11,5 +11,5 @@ spec:
       name: gateway
   rules:
     - backendRefs:
-        - name: nginxservice
+        - name: nginx
           port: 80
