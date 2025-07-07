@@ -34,6 +34,7 @@ Start-Sleep -Seconds 10
 az aks create -n $CLUSTER_NAME -g $GROUP `
     --vnet-subnet-id $AKS_SUBNET_ID `
     --network-plugin azure `
+    --network-plugin-mode overlay `
     --node-vm-size Standard_D8s_v6 `
     --enable-oidc-issuer `
     --enable-workload-identity `

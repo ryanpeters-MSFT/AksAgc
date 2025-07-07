@@ -66,6 +66,7 @@ curl.exe http://$hostname
 
 ## Observations/Notes
 - It can still take several minutes to reconcile and create the resources. 
+- Both "overlay" and regular CNI network plugin modes are supported.
 - Once the AGC resource has been associated with the "alb" subnet, it will create a "Frontend" with a URL in the format `RANDOMSTRING.RANDOM.alb.azure.com`
 - Currently, ALB requires AMD64 architecture for the nodes, otherwise `alb-controller` pods will not schedule, as they require the `kubernetes.io/arch` value of `amd64` on the nodes.
 
