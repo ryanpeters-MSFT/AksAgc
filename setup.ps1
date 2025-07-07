@@ -3,7 +3,7 @@ $VNET = "vnet"
 $AKS_SUBNET = "aks"
 $ALB_SUBNET = "alb"
 $CLUSTER_NAME = "agccluster"
-$IDENTITY_NAME = "ryanagc"
+$IDENTITY_NAME = "agcuser"
 
 # create the resource group
 az group create -n $GROUP -l eastus2 --query id -o tsv
